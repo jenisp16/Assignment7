@@ -1,0 +1,31 @@
+//Name:Jenis Patel
+//Student ID:21CE093
+public class Pract1 {
+ public static void main(String[] args) {
+ // TODO Auto-generated method stub
+ Integer[] m = {1,10,23,18,19,50,0,14,89};
+ System.out.println("Unsorted Array:");
+ for (Integer n : m) {
+ System.out.println(n);
+ }
+ System.out.println("Sorted Array:");
+ for (Integer a : sort(m)) {
+ System.out.println(a);
+ }
+ }
+ static <T extends Comparable<T>> T[] sort(T[] array) {
+ for (int i = array.length - 1; i > 0; i--) {
+ int max = 0;
+ for (int j = 1; j <= i; j++) {
+ if (array[j].compareTo(array[max]) > 0) {
+ max = j;
+ }
+ }
+ T temp = array[max];
+ array[max] = array[i];
+ array[i] = temp;
+ }
+ return array;
+ }
+}
+
